@@ -1,0 +1,22 @@
+<!--
+	This file demonstrates a way of webpage scripting, that was found good by me.
+	The idea is to define functions on the Node class, which is contained in DOM implementations since ancient times.
+	
+	Functions can be called from HTML directly, enabling you to annotate your webpage content with interactions.
+	The script that implements the interaction can access the data stored in the node.
+	This kind of direct binding eliminates the need to copy and synchronize data (like Angular and React do).
+	Also pollution of the global scope is prevented.
+	While this works, the more modern approach of doing this are WebComponents,
+	which let you define your own HTML tags, that can be completely new
+	or inherited from existing tags.
+-->
+
+<!DOCTYPE html>
+<head>
+	<script>
+		Node.prototype.myfunc = function() { console.log('I am scoped to a Node object') }
+	</script>
+</head>
+<body>
+<div onclick="this.myfunc()">Hallo Welt</div>
+</body>
